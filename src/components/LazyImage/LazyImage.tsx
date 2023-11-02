@@ -11,9 +11,9 @@
 
 import Image from 'next/image'
 import styles from './LazyImage.module.scss'
-import { createImageSrcSizes } from '@/../utils'
+import { createImageSrcSizes, getImageRatio ,getRatioFallback } from '@/../utils'
 
-type imgProps = {
+type LazyImgProps = {
 	image: {
 		src: string
 		alt: string
@@ -26,22 +26,9 @@ type imgProps = {
 	intrinsic?: boolean
 }
 
-const getImageRatio = (width: number, height: number) => {
-	for (let num = height; num > 1; num--) {
-		if (width % num == 0 && height % num == 0) {
-			width = width / num
-			height = height / num
-		}
-	}
-	const ratio = width + `/` + height
-	return ratio
-}
 
-const getRatioFallback = (width: number, height: number) => {
-	return (height / width) * 100 + `%`
-}
 
-const LazyImage: React.FC<imgProps> = ({
+const LazyImage: React.FC<LazyImgProps> = ({
 	image,
 	width,
 	height,
@@ -93,4 +80,4 @@ const LazyImage: React.FC<imgProps> = ({
 }
 
 export { LazyImage }
-export type { imgProps }
+export type { LazyImgProps }

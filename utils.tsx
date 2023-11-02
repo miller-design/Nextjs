@@ -34,3 +34,25 @@ export const createImageSrcSizes = (data: number[]) => {
 		return string
 	}
 }
+
+export const getImageRatio = (width: number, height: number) => {
+	/*
+	* Function used for calculating the aspect ratio an image,
+	* This comes in handy when trying to work with intrinsic images
+	*/
+	for (let num = height; num > 1; num--) {
+		if (width % num == 0 && height % num == 0) {
+			width = width / num
+			height = height / num
+		}
+	}
+	const ratio = width + `/` + height
+	return ratio
+}
+
+export const getRatioFallback = (width: number, height: number) => {
+	/*
+	* Function used for calculating the a percentage fallback for intrinsic images
+	*/
+	return (height / width) * 100 + `%`
+}

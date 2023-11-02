@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
 
-## Getting Started
+Brief description or introduction of your project. Mention its purpose and what problem it solves.
 
-First, run the development server:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Installation
+Provide instructions on how to install and set up your project. Include any prerequisites, dependencies, or system requirements.
+
+# Install dependencies
+npm install
+
+## Usage
+
+## Features
+This boilerplate contains a nuber of useful features for developing your project.
+
+LazyImage: Lazy image component leverages the next image component but also adds in an intrinisc image layer helping prevent the document flow from shifting during the page load/render
+
+Scss/Css vars: in the _config.scss file you will see a variable named: "$css-variables". This variable helps create resuable css vars for the entire project.
+To create a new css variable simply add a new var to the scss map like so:
 ```
+	$css-variables: (
+		...
+		site-color: (
+			xsmall: #f0f0,
+			medium: #f00,
+			large: #ff0
+		)
+	);
+```
+This will generate you a new css var called "--project-site-color"
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# License
+This project is licensed under the MIT License.

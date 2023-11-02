@@ -119,12 +119,12 @@ $resolution-range-top: map-get($breakpoints, xxlarge);
 	$value = used to get the correct value
 */
 @mixin css-var-loop($value, $scss_var: $css-variables) {
-	@each $six-key, $six-top-level in $scss_var {
-		@each $six-child-key, $six-value in $six-top-level {
-			@if $six-child-key == $value {
-				--six-#{$six-key}: #{get-scss-variable(
-						#{$six-key},
-						$size: #{$six-child-key}
+	@each $project-key, $project-top-level in $scss_var {
+		@each $project-child-key, $project-value in $project-top-level {
+			@if $project-child-key == $value {
+				--project-#{$project-key}: #{get-scss-variable(
+						#{$project-key},
+						$size: #{$project-child-key}
 					)};
 			}
 		}

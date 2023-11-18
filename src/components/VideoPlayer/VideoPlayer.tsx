@@ -1,4 +1,12 @@
 'use client'
+
+/*
+  component is using ReactPlayer (https://github.com/CookPete/react-player)
+  This is the default way to display a video in the project
+  @param src: string (remote url for video source, always try and avoid hosting local vidoe files eg: https://stream.mux.com/ddJzdeAeYLU01a00T9cGBbKPVsf018RcbnBpxXuv01RE4tE.m3u8)
+  @param poster: string (post thumbnail url, must provide a width and height value in this string eg: https://image.mux.com/ddJzdeAeYLU01a00T9cGBbKPVsf018RcbnBpxXuv01RE4tE/thumbnail.webp?width=800&height=500&fit_mode=crop&time=2)
+*/
+
 import { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import styles from './VideoPlayer.module.scss'

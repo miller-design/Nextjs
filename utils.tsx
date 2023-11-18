@@ -56,3 +56,25 @@ export const getRatioFallback = (width: number, height: number) => {
 	*/
 	return (height / width) * 100 + `%`
 }
+
+export const getSizeValuesFromString = (url: string) => {
+
+	if(!url) {
+		return null
+	}
+
+	const urlSplit = url.split("?")
+
+	if(urlSplit.length <= 0) {
+		return null
+	}
+
+	const urlParams = new URLSearchParams(urlSplit[1])
+	const widthValue = parseFloat(urlParams.get("width") ?? '0')
+	const heightValue = parseFloat(urlParams.get("height") ?? '0')
+
+	return {
+		width: widthValue,
+		height: heightValue
+	}
+}

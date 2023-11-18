@@ -12,5 +12,10 @@
 		grid-column: content;
 		text-align: center;
 		color: white;
+		margin: 0 auto;
+	}
+
+	> div {
+		margin-top: 40px;
 	}
 }
